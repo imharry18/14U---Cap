@@ -1,29 +1,23 @@
-import React from 'react';
-
-/**
- * A reusable Card component.
- *
- * This is a Server Component, as it's just a styled wrapper.
- *
- * @param {object} props
- * @param {string} [props.className] - Additional classes to merge.
- * @param {React.ReactNode} props.children - The content of the card.
- * @returns {React.ReactElement}
- */
 export default function Card({ children, className = '' }) {
-  // Combine classes
-  const classes = [
-    'bg-brand-surface',
-    'rounded-xl',
-    'border',
-    'border-brand-border',
-    'shadow-sm',
-    'overflow-hidden',
-    className,
-  ].join(' ');
-
   return (
-    <div className={classes}>
+    <div 
+      className={`
+        relative 
+        bg-white/[0.02] 
+        backdrop-blur-xl 
+        border border-white/10 
+        rounded-2xl 
+        overflow-hidden 
+        transition-all duration-500 
+        hover:bg-white/[0.04] 
+        hover:border-brand-pink/20 
+        hover:shadow-[0_0_40px_-10px_rgba(236,72,153,0.1)]
+        ${className}
+      `}
+    >
+      {/* Subtle Top Gradient Line for polish */}
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:via-brand-pink/30 transition-all duration-500" />
+      
       {children}
     </div>
   );

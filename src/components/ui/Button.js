@@ -1,55 +1,32 @@
-"use client";
-
 import Link from 'next/link';
 
-/**
- * A reusable Button component.
- *
- * It renders a <Link> if 'href' prop is provided, otherwise a <button>.
- *
- * @param {object} props
- * @param {'primary' | 'secondary' | 'ghost'} [props.variant='primary'] - The visual style of the button.
- * @param {'sm' | 'md' | 'lg'} [props.size='md'] - The size of the button.
- * @param {string} [props.href] - If provided, the button will render as a Next.js <Link>.
- * @param {string} [props.className] - Additional classes to merge.
- * @param {React.ReactNode} props.children - The content of the button.
- * @param {function} [props.onClick] - Click handler.
- * @returns {React.ReactElement}
- */
 export default function Button({
   children,
   className = '',
-  variant = 'primary',
-  size = 'md',
+  variant = 'primary', // primary, secondary, ghost
+  size = 'md',         // sm, md, lg
   href,
   ...props
 }) {
-  // Base styles (common to all buttons)
-  const baseStyles = 'inline-flex items-center justify-center font-semibold rounded-lg shadow-sm transition-colors focus:outline-none focus:ring-2 focus:ring-brand-primary focus:ring-offset-2';
+  // Base styles for all buttons
+  const baseStyles = 'inline-flex items-center justify-center font-semibold rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-pink focus:ring-offset-2 focus:ring-offset-black disabled:opacity-50 disabled:pointer-events-none';
 
-  // Variant styles
+  // Style variants
   const variantStyles = {
-    primary: 'bg-brand-primary text-white hover:bg-brand-dark',
-    secondary: 'bg-brand-surface text-brand-text border border-brand-border hover:bg-brand-bg',
-    ghost: 'bg-transparent text-brand-dark hover:text-brand-primary shadow-none',
+    primary: 'bg-gradient-to-r from-brand-pink to-brand-rose text-white hover:opacity-90 shadow-[0_0_20px_rgba(236,72,153,0.3)] hover:shadow-[0_0_30px_rgba(236,72,153,0.5)] hover:scale-105',
+    secondary: 'bg-white/5 text-white border border-white/10 hover:bg-white/10 hover:border-brand-pink/50 backdrop-blur-sm',
+    ghost: 'bg-transparent text-brand-muted hover:text-brand-pink',
   };
 
-  // Size styles
+  // Size variants
   const sizeStyles = {
-    sm: 'px-3 py-1.5 text-xs',
-    md: 'px-4 py-2 text-sm',
-    lg: 'px-6 py-3 text-base',
+    sm: 'px-4 py-2 text-xs',
+    md: 'px-6 py-3 text-sm',
+    lg: 'px-8 py-4 text-base',
   };
 
-  // Combine all classes
-  const classes = [
-    baseStyles,
-    variantStyles[variant],
-    sizeStyles[size],
-    className,
-  ].join(' ');
+  const classes = `${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className}`;
 
-  // If 'href' is provided, render a <Link>
   if (href) {
     return (
       <Link href={href} className={classes} {...props}>
@@ -58,7 +35,6 @@ export default function Button({
     );
   }
 
-  // Otherwise, render a <button>
   return (
     <button className={classes} {...props}>
       {children}

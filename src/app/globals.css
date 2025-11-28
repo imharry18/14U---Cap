@@ -8,12 +8,16 @@
   --background-end-rgb: 0, 0, 0;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: black;
-}
-
-/* Smooth scrolling for anchor links */
 html {
   scroll-behavior: smooth;
+  background-color: #000000;
+}
+
+body {
+  color: white;
+  background: black;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Professional selection color */
+  @apply selection:bg-pink-600 selection:text-white;
 }

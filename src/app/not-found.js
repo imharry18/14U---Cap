@@ -2,27 +2,26 @@ import Button from '@/components/ui/Button';
 
 export default function NotFound() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-[calc(100vh-8rem)] bg-brand-surface px-6 text-center">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-black px-6 text-center relative overflow-hidden">
       
       {/* Glow Effect */}
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="w-[40rem] h-[40rem] bg-brand-primary/10 blur-[150px] rounded-full mx-auto mt-32" />
+      <div className="absolute inset-0 -z-10 flex items-center justify-center">
+        <div className="w-[30rem] h-[30rem] bg-pink-900/20 blur-[120px] rounded-full" />
       </div>
 
-      {/* Changed Icon to be more professional */}
-      <h1 className="text-7xl font-bold text-brand-primary">
-        🚧
+      <h1 className="text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600 mb-6">
+        404
       </h1>
 
-      <h2 className="mt-6 text-4xl font-bold text-brand-text">
-        Page Under Construction
+      <h2 className="text-3xl font-bold text-white mb-4">
+        Page Not Found
       </h2>
 
-      <p className="mt-4 text-lg text-brand-muted max-w-lg">
-        We're currently building something amazing for this page. It will be available soon. Our team is working hard to bring it to you!
+      <p className="text-slate-400 max-w-md mb-10">
+        The page you are looking for doesn't exist or has been moved.
       </p>
 
-      <Button href="/" variant="primary" size="lg" className="mt-10">
+      <Button href="/" variant="primary" size="lg">
         Go Back Home
       </Button>
     </div>
