@@ -2,6 +2,9 @@ import "./globals.css";
 
 export const metadata = {
   title: "14U Capital",
+  icons: {
+    icon: '/tabicon.png', 
+  },
   description: "Turn Vision into Velocity",
 };
 
