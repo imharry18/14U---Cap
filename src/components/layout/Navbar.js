@@ -21,9 +21,9 @@ export default function Navbar() {
           <div>
             
             {/* UPDATED: Shimmering Text Effect */}
-            <div className="text-[10px] uppercase tracking-widest font-semibold pt-3
+            <div className="text-[10px] uppercase tracking-widest font-semibold 
               animate-shimmer bg-gradient-to-r from-brand-muted via-white to-brand-muted bg-[length:200%_100%] bg-clip-text text-transparent">
-              Turn vision into velocity
+              Turning vision into velocity
             </div>
             
           </div>

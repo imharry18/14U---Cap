@@ -21,7 +21,7 @@ export default function Contact() {
   const MAX_CHARS = 500;
 
   // CHANGE THIS: Your admin email
-  const RECIPIENT_EMAIL = "harishkumar17102@gmail.com"; 
+  const RECIPIENT_EMAIL = "hello@14ucapital.in"; 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
